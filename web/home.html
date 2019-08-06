@@ -62,12 +62,12 @@
 				<input type="text" required id="gameName" placeholder="Room Name" />
 				<p class="details">Name of room that players see when joining, or in public list if public</p>
 				<input name="gameVisibility" type="radio" required /><span>Public</span>
-				<input name="gameVisibility" type="radio" checked required /><span>Private</span>
+				<input name="gameVisibility" type="radio" required /><span>Private</span>
 				<p class="details">Allow the game to be public and appear in list to the left. If left unchecked, people can only join by link</p>
 				<input name="cardType" type="radio" required /><span>Real Decks</span>
-				<input name="cardType" type="radio" checked required /><span>Complete Random</span>
+				<input name="cardType" type="radio" required /><span>Complete Random</span>
 				<p class="details">Use a pool of <span id="numOfSets">3</span> (1 + number of players) sets of cards (that's <span id="numOfCards">156</span> cards) and draw from there. Pool of cards reset when round starts and there are less than <span id="resetCards">21</span> (7 * number of players) cards left. If unchecked cards a complete random (impossible to do counting).</p>
-				<input name="gameType" type="radio" checked required /><span>PvD</span>
+				<input name="gameType" type="radio" required /><span>PvD</span>
 				<input name="gameType" type="radio" required /><span>PvE</span>
 				<p class="details">PvD is the classic type where each player is essentially in their own game against the dealer. PvE is pretty much the same except players are trying to beat the other players instead of the dealer.</p>
 				<input type="range" required max="7" min="2" step="1" value="2" /><span id="players">2</span>
