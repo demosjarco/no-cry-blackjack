@@ -4,7 +4,10 @@
 	"description": "Blackjack with friends but with fake money",
 	"main": "server.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node server.js",
+		"start-comm": "node server-comm.js",
+		"dev": "nodemon server.js",
+		"dev-comm": "nodemon server-comm.js"
 	},
 	"repository": {
 		"type": "git",
