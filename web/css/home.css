@@ -64,3 +64,6 @@ body aside form button {
   font-size: larger;
   color: white;
 }
+body aside form button:active {
+  background-color: #B71C1C;
+}
