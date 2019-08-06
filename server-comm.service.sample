@@ -5,10 +5,11 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=.../no-cry-blackjack/
-ExecStart=.../no-cry-blackjack/ "npm run dev-comm"
-User=
-Group=
-Restart=always
+ExecStart=/usr/bin/node server-comm.js
+User=...
+Group=...
+RemainAfterExit=no
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
