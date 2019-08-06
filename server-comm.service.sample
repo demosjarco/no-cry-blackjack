@@ -1,0 +1,14 @@
+[Unit]
+Description=No Cry Blackjack Comm Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=.../no-cry-blackjack/
+ExecStart=.../no-cry-blackjack/ "npm run dev-comm"
+User=
+Group=
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
