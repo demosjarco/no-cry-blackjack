@@ -54,3 +54,13 @@ body aside form input[type=range] {
 body aside form span#players {
   display: inline-block;
 }
+body aside form button {
+  -webkit-appearance: none;
+  border: none;
+  padding: 2%;
+  background-color: #D32F2F;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  color: white;
+}
