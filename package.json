@@ -7,7 +7,8 @@
 		"start": "node server.js",
 		"start-comm": "node server-comm.js",
 		"dev": "nodemon server.js",
-		"dev-comm": "nodemon server-comm.js"
+		"dev-comm": "nodemon server-comm.js",
+		"less": "less-watch-compiler web/css web/css"
 	},
 	"repository": {
 		"type": "git",
