@@ -1,0 +1,76 @@
+@import "variables";
+
+body {
+	padding-right: 285px;
+	
+	main {
+		section {
+			div#publicList {
+				display: flex;
+				flex-direction: column;
+				
+				font-family: 'Open Sans Condensed', sans-serif;
+				font-size: larger;
+				
+				div.publicGame {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+					
+					min-width: 550px;
+					
+					&.info {
+						font-family: 'Open Sans', sans-serif;
+						font-weight: bold;
+					}
+					
+					div {
+						display: inline-block;
+						
+						a:link, a:visited, a:hover, a:active {
+//							color: @important-text;
+							color: @primary-variant;
+							text-decoration: none;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	aside {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 5px;
+		width: 275px;
+		max-height: ~"calc(100% - 64px)";
+		overflow-y: scroll;
+		
+		background-color: @primary;
+		color: @secondary-text;
+		
+		h2 {
+			text-align: center;
+		}
+		
+		form {
+			input[type=text] {
+				width: ~"calc(100% - 5px)";;
+			}
+			
+			p.details {
+				font-size: smaller;
+			}
+			
+			input[type=range] {
+				vertical-align: text-top;
+			}
+			
+			span#players {
+				display: inline-block;
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+body {
+  padding-right: 285px;
+}
+body main section div#publicList {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: larger;
+}
+body main section div#publicList div.publicGame {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-width: 550px;
+}
+body main section div#publicList div.publicGame.info {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+body main section div#publicList div.publicGame div {
+  display: inline-block;
+}
+body main section div#publicList div.publicGame div a:link,
+body main section div#publicList div.publicGame div a:visited,
+body main section div#publicList div.publicGame div a:hover,
+body main section div#publicList div.publicGame div a:active {
+  color: #D32F2F;
+  text-decoration: none;
+  font-weight: bold;
+}
+body aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  width: 275px;
+  max-height: calc(100% - 64px);
+  overflow-y: scroll;
+  background-color: #90CAF9;
+  color: #000000;
+}
+body aside h2 {
+  text-align: center;
+}
+body aside form input[type=text] {
+  width: calc(100% - 5px);
+}
+body aside form p.details {
+  font-size: smaller;
+}
+body aside form input[type=range] {
+  vertical-align: text-top;
+}
+body aside form span#players {
+  display: inline-block;
+}

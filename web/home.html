@@ -1,12 +1,87 @@
 <!doctype html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<meta charset="utf-8" />
 	<title>NCB | Home</title>
 	<link rel="stylesheet" href="css/common.css" type="text/css" />
+	<link rel="stylesheet" href="css/home.css" type="text/css" />
 </head>
 
 <body>
+	<main>
+		<header>
+			<h1>No Cry Blackjack</h1>
+		</header>
+		<section>
+			<h2>Public Games</h2>
+			<div id="publicList">
+				<div class="publicGame info">
+					<div class="gameTitle">Game Name</div>
+					<div class="cardType">Card Type</div>
+					<div class="gameType">Game Type</div>
+					<div class="players"># Players</div>
+					<div class="joinLink">Join Link</div>
+				</div>
+				<div class="publicGame">
+					<div class="gameTitle">Test 1</div>
+					<div class="cardType">Random</div>
+					<div class="gameType">PvD</div>
+					<div class="players">2/3</div>
+					<div class="joinLink"><a href="">Join</a></div>
+				</div>
+				<div class="publicGame">
+					<div class="gameTitle">Test 2</div>
+					<div class="cardType">Random</div>
+					<div class="gameType">PvE</div>
+					<div class="players">5/7</div>
+					<div class="joinLink"><a href="">Join</a></div>
+				</div><div class="publicGame">
+					<div class="gameTitle">Test 3</div>
+					<div class="cardType">Random</div>
+					<div class="gameType">PvD</div>
+					<div class="players">2/3</div>
+					<div class="joinLink"><a href="">Join</a></div>
+				</div><div class="publicGame">
+					<div class="gameTitle">Test 4</div>
+					<div class="cardType">Random</div>
+					<div class="gameType">PvD</div>
+					<div class="players">2/3</div>
+					<div class="joinLink"><a href="">Join</a></div>
+				</div><div class="publicGame">
+					<div class="gameTitle">Test 5</div>
+					<div class="cardType">Random</div>
+					<div class="gameType">PvD</div>
+					<div class="players">2/3</div>
+					<div class="joinLink"><a href="">Join</a></div>
+				</div>
+			</div>
+		</section>
+		<aside>
+			<h2>Create Room</h2>
+			<form onSubmit="createRoom()">
+				<input type="text" required id="gameName" placeholder="Room Name" />
+				<p class="details">Name of room that players see when joining, or in public list if public</p>
+				<input name="gameVisibility" type="radio" required /><span>Public</span>
+				<input name="gameVisibility" type="radio" checked required /><span>Private</span>
+				<p class="details">Allow the game to be public and appear in list to the left. If left unchecked, people can only join by link</p>
+				<input name="cardType" type="radio" required /><span>Real Decks</span>
+				<input name="cardType" type="radio" checked required /><span>Complete Random</span>
+				<p class="details">Use a pool of <span id="numOfSets">3</span> (1 + number of players) sets of cards (that's <span id="numOfCards">156</span> cards) and draw from there. Pool of cards reset when round starts and there are less than <span id="resetCards">21</span> (7 * number of players) cards left. If unchecked cards a complete random (impossible to do counting).</p>
+				<input name="gameType" type="radio" checked required /><span>PvD</span>
+				<input name="gameType" type="radio" required /><span>PvE</span>
+				<p class="details">PvD is the classic type where each player is essentially in their own game against the dealer. PvE is pretty much the same except players are trying to beat the other players instead of the dealer.</p>
+				<input type="range" required max="7" min="2" step="1" value="2" /><span id="players">2</span>
+				<p class="details">Max numbers of players in lobby</p>
+				<input type="submit" value="Create Game" />
+			</form>
+		</aside>
+		<footer>
+			<ul>
+				<li><span class="ping">0</span>ms <span class="server">Load Balancer</span></li>
+				<li><span class="ping">0</span>ms <span class="server">Server 1</span></li>
+				<li><span class="ping">0</span>ms <span class="server">Server 2</span></li>
+			</ul>
+		</footer>
+	</main>
 </body>
 </html>
