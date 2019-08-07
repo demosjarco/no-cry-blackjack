@@ -19,7 +19,7 @@ app.listen(process.env.WEBSOCKET_PUBLIC_PORT);
 	});
 });*/
 
-io.of('/sockets/magic').on('connection', function (socket) {
+io.of('/magic').on('connection', function (socket) {
 	console.log('test 2 connected');
 	socket.on('createRoom', function (gameInfo) {
 		console.log(gameInfo);
