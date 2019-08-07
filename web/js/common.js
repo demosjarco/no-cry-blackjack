@@ -9,6 +9,7 @@ $(function () {
 	});
 
 	backend.on('connect', function () {
+		$('body main section').css('display', 'block');
 		$('body main aside').css('display', 'block');
 	});
 });
