@@ -17,6 +17,7 @@ const publicLobby = io.of('/public/lobby').on('connection', function (socket) {
 });
 
 io.of('/public/roomCreate').on('connection', function (socket) {
+	console.log('connected');
 	wtp.acquire('./threads/public/createLobby.js', { env: SHARE_ENV }, function (err, worker) {
 		worker.on('error', (err2) => {
 			console.error(err2);
