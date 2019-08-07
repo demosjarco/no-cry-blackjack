@@ -14,15 +14,6 @@ app.listen(process.env.WEBSOCKET_PUBLIC_PORT);
 
 io.on('connection', function (socket) {
 	console.log('test 1 connected');
-	console.log(socket);
-});
-
-/*const publicLobby = io.of('/public/lobby').on('connection', function (socket) {
-	
-});
-
-io.of('/public/roomCreate').on('connection', function (socket) {
-	console.log('connected');
 	wtp.acquire('./threads/public/createLobby.js', { env: SHARE_ENV }, function (err, worker) {
 		worker.on('error', (err2) => {
 			console.error(err2);
@@ -31,8 +22,7 @@ io.of('/public/roomCreate').on('connection', function (socket) {
 			console.log(value);
 		});
 		socket.on('createRoom', function (gameInfo) {
-			console.log(gameInfo);
-			worker.postMessage(gameInfo);
+			worker.postMessage({ createRoom: gameInfo });
 		});
 	});
-});*/
+});
