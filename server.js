@@ -25,6 +25,7 @@ io.of('/public/roomCreate').on('connection', function (socket) {
 			console.log(value);
 		});
 		socket.on('createRoom', function (gameInfo) {
+			console.log(gameInfo);
 			worker.postMessage(gameInfo);
 		});
 	});
