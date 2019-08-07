@@ -12,6 +12,13 @@ var io = require('socket.io')(app);
 
 app.listen(process.env.WEBSOCKET_PUBLIC_PORT);
 
+io.on('connection', function (socket) {
+	console.log('connected');
+	socket.on('createRoom', function (gameInfo) {
+		console.log(gameInfo);
+	});
+});
+
 const publicLobby = io.of('/public/lobby').on('connection', function (socket) {
 	
 });
