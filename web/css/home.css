@@ -1,6 +1,9 @@
 body {
   padding-right: 285px;
 }
+body main section {
+  display: none;
+}
 body main section div#publicList {
   display: flex;
   flex-direction: column;
@@ -29,6 +32,7 @@ body main section div#publicList div.publicGame div a:active {
   font-weight: bold;
 }
 body aside {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
