@@ -21,8 +21,12 @@ io.on('connection', function (socket) {
 		worker.on('message', (value) => {
 			console.log(value);
 		});
+		worker.on('close', () => {
+			console.log('closed');
+		});
 		socket.on('createRoom', function (gameInfo) {
-			worker.postMessage({ createRoom: gameInfo });
+			console.log(gameInfo);
+			//worker.postMessage({ createRoom: gameInfo });
 		});
 	});
 });
