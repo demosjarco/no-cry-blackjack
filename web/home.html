@@ -59,21 +59,21 @@
 		<aside>
 			<h2>New Room</h2>
 			<form onSubmit="createRoom()">
-				<input type="text" pattern="[A-Za-z0-9\s]+" id="gameName" placeholder="Room Name (a-z and 0-9 only)" required />
+				<input type="text" pattern="[A-Za-z0-9\s]+" id="roomName" placeholder="Room Name (a-z and 0-9 only)" required />
 				<p class="details">Name of room that players see when joining, or in public list if public</p>
-				<input name="gameVisibility" type="radio" required /><span>Public</span>
-				<input name="gameVisibility" type="radio" required /><span>Private</span>
+				<input name="gameVisibility" type="radio" value="public" required /><span>Public</span>
+				<input name="gameVisibility" type="radio" value="private" required /><span>Private</span>
 				<p class="details">Allow the game to be public and appear in list to the left. If left unchecked, people can only join by link</p>
-				<input name="cardType" type="radio" required /><span>Real Decks</span>
-				<input name="cardType" type="radio" required /><span>Complete Random</span>
+				<input name="cardType" type="radio" value="real" required /><span>Real Decks</span>
+				<input name="cardType" type="radio" value="random" required /><span>Complete Random</span>
 				<p class="details">Use a pool of <span id="numOfSets">3</span> (1 + number of players) sets of cards (that's <span id="numOfCards">156</span> cards) and draw from there. Pool of cards reset when round starts and there are less than <span id="resetCards">21</span> (7 * number of players) cards left. If unchecked cards a complete random (impossible to do counting).</p>
-				<input name="gameType" type="radio" required /><span>PvD</span>
-				<input name="gameType" type="radio" required /><span>PvP</span>
+				<input name="gameType" type="radio" value="pvd" required /><span>PvD</span>
+				<input name="gameType" type="radio" value="pvp" required /><span>PvP</span>
 				<p class="details">PvD is the classic type where each player is essentially in their own game against the dealer. PvP is pretty much the same except players are trying to beat the other players instead of the dealer.</p>
 				<input type="range" max="7" min="2" step="1" value="2" oninput="playerSliderChanged(this.value)" required /><span id="players">2</span>
 				<p class="details">Max numbers of players in lobby</p>
-				<input name="midJoinType" type="radio" required /><span>Join anytime</span>
-				<input name="midJoinType" type="radio" required /><span>Spectate only</span>
+				<input name="midJoinType" type="radio" value="join" required /><span>Join anytime</span>
+				<input name="midJoinType" type="radio" value="spec" required /><span>Spectate only</span>
 				<p class="details">Allow players to join into a game mid progress</p>
 				<input type="number" required placeholder="Starting tokens" min="1" step="1" />
 				<p class="details">The amount of tokens each person starts off with at the beginning of the game</p>
