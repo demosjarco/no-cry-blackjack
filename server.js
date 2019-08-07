@@ -16,10 +16,16 @@ const publicLobby = io.of('/public/lobby').on('connection', function (socket) {
 	
 });
 
-const roomCreate = io.of('/public/roomCreate').on('connection', function (socket) {
+io.of('/public/roomCreate').on('connection', function (socket) {
 	wtp.acquire('./threads/public/createLobby.js', { env: SHARE_ENV }, function (err, worker) {
+		worker.on('error', (err2) => {
+			console.error(err2);
+		});
+		worker.on('message', (value) => {
+			console.log(value);
+		});
 		socket.on('createRoom', function (gameInfo) {
-			console.log(gameInfo);
+			worker.postMessage(gameInfo);
 		});
 	});
 });
