@@ -19,7 +19,7 @@ io.on('connection', function (socket) {
 	});
 });
 
-io.of('sockets').on('connection', function (socket) {
+io.of('/sockets').on('connection', function (socket) {
 	console.log('test 2 connected');
 	socket.on('createRoom', function (gameInfo) {
 		console.log(gameInfo);
