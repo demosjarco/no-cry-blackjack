@@ -32,7 +32,7 @@
 				<div class="publicGame">
 					<div class="gameTitle">Test 2</div>
 					<div class="cardType">Random</div>
-					<div class="gameType">PvE</div>
+					<div class="gameType">PvP</div>
 					<div class="players">5/7</div>
 					<div class="joinLink"><a href="">Join</a></div>
 				</div><div class="publicGame">
@@ -59,7 +59,7 @@
 		<aside>
 			<h2>New Room</h2>
 			<form onSubmit="createRoom()">
-				<input type="text" required id="gameName" placeholder="Room Name" />
+				<input type="text" pattern="[A-Za-z0-9\s]+" id="gameName" placeholder="Room Name (a-z and 0-9 only)" required />
 				<p class="details">Name of room that players see when joining, or in public list if public</p>
 				<input name="gameVisibility" type="radio" required /><span>Public</span>
 				<input name="gameVisibility" type="radio" required /><span>Private</span>
@@ -68,13 +68,15 @@
 				<input name="cardType" type="radio" required /><span>Complete Random</span>
 				<p class="details">Use a pool of <span id="numOfSets">3</span> (1 + number of players) sets of cards (that's <span id="numOfCards">156</span> cards) and draw from there. Pool of cards reset when round starts and there are less than <span id="resetCards">21</span> (7 * number of players) cards left. If unchecked cards a complete random (impossible to do counting).</p>
 				<input name="gameType" type="radio" required /><span>PvD</span>
-				<input name="gameType" type="radio" required /><span>PvE</span>
-				<p class="details">PvD is the classic type where each player is essentially in their own game against the dealer. PvE is pretty much the same except players are trying to beat the other players instead of the dealer.</p>
-				<input type="range" required max="7" min="2" step="1" value="2" /><span id="players">2</span>
+				<input name="gameType" type="radio" required /><span>PvP</span>
+				<p class="details">PvD is the classic type where each player is essentially in their own game against the dealer. PvP is pretty much the same except players are trying to beat the other players instead of the dealer.</p>
+				<input type="range" max="7" min="2" step="1" value="2" oninput="playerSliderChanged(this.value)" required /><span id="players">2</span>
 				<p class="details">Max numbers of players in lobby</p>
 				<input name="midJoinType" type="radio" required /><span>Join anytime</span>
 				<input name="midJoinType" type="radio" required /><span>Spectate only</span>
 				<p class="details">Allow players to join into a game mid progress</p>
+				<input type="number" required placeholder="Starting tokens" min="1" step="1" />
+				<p class="details">The amount of tokens each person starts off with at the beginning of the game</p>
 				<button>Create</button>
 				<p class="details">Rooms automatically close if no one is in them for 5 minutes or if a game has not started in 15 minutes.</p>
 			</form>
@@ -87,5 +89,10 @@
 			</ul>
 		</footer>
 	</main>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+	<script src="js/common.js" type="text/javascript"></script>
+	<script src="js/publicLobby.js" type="text/javascript"></script>
+	<script src="js/createRoom.js" type="text/javascript"></script>
 </body>
 </html>
