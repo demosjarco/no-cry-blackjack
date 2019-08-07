@@ -10,4 +10,18 @@ function playerSliderChanged(numPlayers = 2) {
 
 function createRoom() {
 	event.preventDefault();
+
+	var chat = io.connect('https://demosjarco.dev/socket/public/roomCreate');
+
+	chat.on('connect', function () {
+		chat.emit('createRoom', {
+			roomName: $('body main aside form input[type=text]').text(),
+			gameVisibility: $('body main aside form input[type=radio][name=gameVisibility]').val(),
+			cardType: $('body main aside form input[type=radio][name=cardType]').val(),
+			gameType: $('body main aside form input[type=radio][name=gameType]').val(),
+			players: $('body main aside form input[type=range]').val(),
+			midJoinType: $('body main aside form input[type=radio][name=midJoinType]').val(),
+			tokens: $('body main aside form input[type=number]').val(),
+		});
+	});
 }
