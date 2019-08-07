@@ -13,7 +13,14 @@ var io = require('socket.io')(app);
 app.listen(process.env.WEBSOCKET_PUBLIC_PORT);
 
 io.on('connection', function (socket) {
-	console.log('connected');
+	console.log('test 1 connected');
+	socket.on('createRoom', function (gameInfo) {
+		console.log(gameInfo);
+	});
+});
+
+io.of('sockets').on('connection', function (socket) {
+	console.log('test 2 connected');
 	socket.on('createRoom', function (gameInfo) {
 		console.log(gameInfo);
 	});
