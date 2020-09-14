@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"less": "^3.10.3",
-		"less-watch-compiler": "^1.14.1",
+		"less-watch-compiler": "^1.14.6",
 		"nodemon": "^1.19.4"
 	}
 }
